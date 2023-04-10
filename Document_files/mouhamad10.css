@@ -1,0 +1,215 @@
+.container{
+    width: 800px;
+    height: 400px;
+    margin: 100px auto;
+    background-color: #eee;
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+}
+
+
+.one{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(8, auto);
+    
+    
+    grid-template-areas: "one1 one1 one1 one1 "
+                         "one2 . . ."
+                         "one3 . . ."
+                         "one4 one4 one4 one4 "
+                         "one5 . . ."
+                         "one6 . . ."
+                         "one7 one7 one7 one7 ";
+                         
+position: relative;
+
+}
+
+
+
+.one1,
+.one2,
+.one3,
+.one4,
+.one5,
+.one6,
+.one7,
+.two1,
+.two2,
+.two3,
+.two4,
+.two5,
+.two6,
+.two7
+{
+    background-color: black;
+}
+
+.one1{
+    grid-area:   one1;
+}
+
+.one2{
+    grid-area:   one2;
+}
+
+.one3{
+    grid-area:   one3;
+}
+
+.one4{
+    grid-area:   one4;
+}
+
+.one5{
+    grid-area:   one5;
+}
+
+.one6{
+    grid-area:   one6;
+}
+
+.one7{
+    grid-area:   one7;
+}
+
+
+
+.one .one1::after{
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 158px;
+    width: 40px;
+    height: 40px;
+    background-color: orange;
+    animation-name: turn_one;
+    animation-duration: 3s;
+    animation-delay: 3s;
+}
+
+    
+
+@keyframes turn_one{
+   0%{
+    transform: translate(-150px,0)
+
+   }
+
+    15%{
+        transform: translate(-150px,170px);
+    }
+
+    30%{
+        transform: translate(2px,170px)
+    
+    }
+    
+    45%{
+        transform: translate(-150px,170px);
+
+    }
+
+    60%{
+        transform: translate(-150px,340px);
+    }
+
+    70%{
+            transform: translate(2px,340px);
+        }
+    
+    80%{
+        transform: translate(-150px,340px);
+
+    }
+
+    90%{
+        transform: translate(-150px,-2px);
+
+    }
+
+    100%{
+        transform: translate(2px,-2px);
+
+    }
+}
+
+
+.two{
+    display: grid;
+    width: 98%;
+    grid-template-columns: repeat(8, auto);
+    
+    
+    grid-template-areas: "two1 . . . . . . . "
+                         "two2 . . . . . . ."
+                         "two3 . . . . . . ."
+                         "two4 . . . . . . ."
+                         "two5 . . . . . . ."
+                         "two6 . . . . . . ."
+                         "two7 two7 two7 two7 . . . . ";
+                         
+position: relative;
+left: -100px;
+}
+
+
+.two1{
+    grid-area:   two1;
+}
+
+.two2{
+    grid-area:   two2;
+}
+
+.two3{
+    grid-area:   two3;
+}
+
+.two4{
+    grid-area:   two4;
+}
+
+.two5{
+    grid-area:   two5;
+}
+
+.two6{
+    grid-area:   two6;
+}
+
+.two7{
+    grid-area:   two7;
+}
+
+.two::after{
+    content: "";
+    position: absolute;
+    bottom: 7px;
+    right: 200px;
+    width: 40px;
+    height: 40px;
+    background-color: orange;
+    animation-name: turn_two;
+    animation-duration: 3s;
+    animation-fill-mode: both;
+}
+
+@keyframes turn_two{
+    0%{
+        transform: translate(0px);
+    }
+    30%
+    {
+        transform: translatex(-145px);
+
+    }
+    100%{
+        transform: translate(-145px,-350px);
+        visibility: hidden;
+    }
+
+   
+}
